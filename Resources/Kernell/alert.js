@@ -1,0 +1,1 @@
+alert("Este juego contiene libreria de imagenes de otros desarrolladores y esta realizado con fines didacticos");

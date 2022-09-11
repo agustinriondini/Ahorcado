@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./Resources/Theme/reset.css">
+        <link rel="stylesheet" href="./Resources/Theme/game_design.css">
+        <title>J.A.R Games Ahorcado</title>
+    </head>
+    <body>
+        <h1 class="game__title">J.A.R GAMES: EL AHORCADO</h1>
+        <div id="principal" class="main__container">
+            <div class="graphics__container">
+                <div class="display__container">
+                    <img id="imagen_ahorcado" src="img/0_errores.png" class="estilo-imagen" alt="Imagen juego ahorcado">
+                    <h5 class="word_builder">LETRAS CORRECTAS</h5>
+                    <div id="palabra" class="word">
+                    </div>
+                    <h3 class="word_builder">LETRAS INCORRECTAS</h3>
+                    <div class="failed_words_container">
+                        <div id="fails" class="failed_words_box">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="interface_container">
+                <div class="general_word_container">
+                    <h3 class="notification">Ingrese la palabra secreta:</h3>
+                    <input id="hiddenword" type="text" class="form-control" placeholder="La palabra secreta es.." aria-describedby="label_hiddenword">
+                    <button id="boton_iniciar" class="btn">Guardar</button>
+                </div>
+
+                <div class="general_word_container">
+                    <h3 class="notification">Ingrese una letra:</h3>
+                    <input id="probar_letra" type="text" class="form-control" placeholder="--"
+                    aria-describedby="label_probar_letra" maxlength="1" minlength="1" disabled>
+                    <button id="boton_probar" class="btn" disabled>Validar</button>
+                </div>
+                            
+                <div class="general_word_container">
+                    <h3 class="notification">Adivinar pablabra:</h3>
+                    <input id="adivinar" type="text" class="form-control" placeholder="Adivinar aqui"
+                    aria-describedby="label_adivinar" disabled>
+                    <button id="boton_adivinar" class="btn" disabled>Validar</button>
+                </div>
+
+                <div class="reset_container">
+                    <button id="boton_finalizar" class="finalbtn">Reiniciar Juego</button>
+                </div>
+            </div>
+        </div>
+     
+        <div class="modal fade" id="mensaje" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="etiqueta_mensaje"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <section class="developer">
+                        <div class="developer_container">
+                            <a href="https://www.linkedin.com/in/juan-agustin-2226a6195/"><img class="one" src="./Resources/Graphics/ico/linkedin.png"></a>
+                            <a href="https://github.com/agustinriondini"><img  class="one" src="./Resources/Graphics/ico/github.png"></a>
+                            <a href="https://www.facebook.com/agustin.riondini.94/"><img class="one" src="./Resources/Graphics/ico/facebook.png"></a>
+                            <a href="https://www.instagram.com/agustinriondini/"><img  class="one" src="./Resources/Graphics/ico/instagram.png"></a>
+                        </div>
+                        <div class="developer_rights">
+                            <p class="dev">J.A.R Encryptor Copyright @2022 contact: juan.riondini@gmail.com</p>
+                            <p class="dev">Version 2.1</p>
+                        </div>
+                    </section>
+                    
+                    <div id="cuerpo_mensaje" class="alert">
+                    </div>
+                
+                    
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        
+        <script src="/Resources/Kernell/main_code.js"></script>
+        <script src="/Resources/Kernell/alert.js"></script>
+    </body>
+
+    </html>
