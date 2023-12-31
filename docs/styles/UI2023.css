@@ -6,6 +6,11 @@
     backdrop-filter: blur(7px);
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100vw;
+    min-width: 300px;
+    max-width: 1000px;
+    height: auto;
+    min-height: fit-content;
 }
 /*Centro de notificaciones y mensajes*/
 .msg_container{
