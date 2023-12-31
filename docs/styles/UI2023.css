@@ -271,7 +271,7 @@
     max-width: 450px;
     height: auto;
     min-height: 50px;
-    display: flex;
+    display: flexbox;
     align-items: center;
     justify-content: space-evenly;
     margin: auto;
