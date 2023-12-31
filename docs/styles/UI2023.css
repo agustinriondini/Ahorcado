@@ -2,7 +2,7 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .bud{
-    background-image: url(/docs/images/mainbg.svg);
+    background-image: url(./docs/images/mainbg.svg);
     backdrop-filter: blur(7px);
 }
 /*Centro de notificaciones y mensajes*/
