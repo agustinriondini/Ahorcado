@@ -1,0 +1,1 @@
+alert("Hay una nueva version disponible del juego, pruebala ahora!");
