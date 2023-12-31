@@ -288,7 +288,7 @@
     min-width: 300px;
     max-width: 450px;
     height: auto;
-    display: flex;
+    display: flexbox;
     flex-direction: column;
     justify-content: center;
     min-height: 50px;
