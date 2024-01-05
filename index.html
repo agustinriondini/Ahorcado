@@ -11,8 +11,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="./docs/scripts/main_code.js"></script>
-    <script src="./docs/scripts/alert.js"></script>
+    <script src="./docs/scripts/kernel.js"></script>
+    <script src="./docs/scripts/selector.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--Interfaz-->
     <link rel="stylesheet" href="./docs/styles/reset.css">
     <link rel="stylesheet" href="./docs/styles/UI2023.css">
@@ -28,6 +29,16 @@
             <div class="display_container">
                 <img id="imagen_ahorcado" src="img/0_errores.png" class="estilo-imagen" alt="Imagen juego ahorcado">
             </div>
+            <div class="pannel_container">
+                <div class="selector">
+                    <h4 class="selector_subtitle">Seleccione dificultad:</h4>
+                    <select name="selector_dificultad" id="selectDificultad" onchange="pruebaPiloto()">
+                        <option value="infante" id="option_infate" hidden></option>
+                        <option value="facil" id="option_facil">Facil</option>
+                        <option value="dificil" id="option_dificil">Dificil</option>
+                        <option value="unlu" id="option_unlu">UNLU (evento)</option>
+                    </select>
+                </div>
             <div class="pannel_container">
                 <div class="common_container">
                     <h3 class="subtitle">Pablabra a descubrir:</h3>
@@ -51,7 +62,7 @@
 
                 <div class="alternative_container">
                     <div class="limbo">
-                    <h3 class="subtitle">CORRECTAS</h3>
+                    <h3 class="subtitle">PALABRA</h3>
                         <div id="palabra" class="validword_container">
                         </div>
                     </div>
@@ -64,7 +75,6 @@
                 <div class="reset_container">
                     <button id="boton_finalizar" class="btn_style_a">Reiniciar</button>
                 </div>
-                <h5 class="modal-alert">Registro de cambios <a href="./docs/scripts/changelog.html" class="changelog">Ver</a></h5>
             </div>
         </div>
         <div class="modal_fade" id="mensaje" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -93,7 +103,7 @@
             </div>
             <div class="developer_rights">
                 <p class="dev">JARSoft | Games | 2022-2023</p>
-                <p class="dev">Version 2.3 (Update 30/12/2023)</p>
+                <p class="dev">Version 2.3.2 (Update 04/01/2024)</p>
                 <p class="dev">Contacto: juan.riondini@gmail.com</p>
             </div>
         </section>

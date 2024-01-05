@@ -309,7 +309,8 @@ $(document).ready(function () {
     }
 
     function finalizar() {
-        inicializar();
+        //desactivada y reemplazada por la siguiente accion. modo prueba inicializar();
+        location.reload();
     }
 
     function main() {
