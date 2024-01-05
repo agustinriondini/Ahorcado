@@ -129,6 +129,7 @@ html{
     align-items: center;
     justify-content: space-between;
     margin: auto;
+    gap: 10px;
 }
 .common_container{
     width: 100%;
