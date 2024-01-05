@@ -1,13 +1,11 @@
 $(document).ready(function () {
     alert("El juego ha cambiado el nivel de dificultad. Pulsa 'aceptar' y luego 'jugar'");
-    alert("En este evento, las palabras son nombres de paises");
+    alert("Te ayudo un poco. Es un pais de america");
     
     // palabras para adivinar
     var listaPalabras = [
-        "Argentina", "Australia", "Austria", "Belgica", "Brasil", "Chile", "China", "Colombia", "Cuba", "Dinamarca",
-        "Ecuador", "Egipto", "España", "Francia", "Grecia", "India", "Indonesia", "Italia", "Japon", "Mexico", "Noruega", "Panama", "Peru", "Polonia", "Portugal", "Qatar", "Rusia",
-        "Serbia", "Suecia", "Suiza", "Siria", "Turquía", "Ucrania", "Uruguay", "Venezuela", "Vietnam",
-        "Angola", "Camerun", "Chad", "Irak", "Irlanda", "Jamaica", "Nigeria", "Paraguay", "Catar",
+        "Argentina", "Brasil", "Chile", "Colombia", "Ecuador", "Peru", "Uruguay", "Bolivia", "Venezuela", "Mexico", "Panama", "Canada",
+        "Paraguay", "Estados Unidos",  
     
     ];
 
