@@ -101,6 +101,22 @@ html{
 /*----------------------------------*/
 
 /*Interfaz de usuario*/
+.selector{
+    width: 45%;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+    border: solid 0.1rem white;
+    border-radius: 12.5px;
+    height: auto;
+    min-height: 50px;
+}
+.selector_subtitle{
+    color: white;
+}
 .pannel_container{
     width: 45%;
     min-width: 300px;
