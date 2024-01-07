@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=7">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="El juego del ahorcado. JARSoft v2.0">
+    <meta name="description" content="El juego del ahorcado. JARSoft v2.3.3">
     <meta name="keywords" content="el ahorcado, juego del ahorcado">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Motor del juego-->
@@ -32,11 +32,11 @@
             <div class="pannel_container">
                 <div class="selector">
                     <h4 class="selector_subtitle">Seleccione dificultad:</h4>
-                    <select name="selector_dificultad" id="selectDificultad" onchange="pruebaPiloto()">
-                        <option value="infante" id="option_infate" hidden></option>
+                    <select name="selector_dificultad" id="selectDificultad" onchange="pruebaPiloto()" required>
+                        <option value="oldgame" id="option_infate" selected>Manual v2.2</option>
                         <option value="facil" id="option_facil">Facil</option>
                         <option value="dificil" id="option_dificil">Dificil</option>
-                        <option value="unlu" id="option_unlu">UNLU (evento)</option>
+                        <option value="unlu" id="option_unlu">UNLU (Beta)</option>
                     </select>
                 </div>
                 <div class="common_container">
@@ -102,7 +102,7 @@
             </div>
             <div class="developer_rights">
                 <p class="dev">JARSoft | Games | 2022-2023</p>
-                <p class="dev">Version 2.3.2 (Update 04/01/2024)</p>
+                <p class="dev">Version 2.3.3 (Update 07/01/2024)</p>
                 <p class="dev">Contacto: juan.riondini@gmail.com</p>
             </div>
         </section>

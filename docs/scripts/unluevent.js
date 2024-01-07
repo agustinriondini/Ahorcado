@@ -4,7 +4,7 @@ $(document).ready(function () {
     
     // palabras para adivinar
     var listaPalabras = [
-        "García Márquez", "Rowling", "Murakami", "Austen", "Orwell",
+        "Garcia Marquez", "Rowling", "Murakami", "Austen", "Orwell",
         "Christie", "Fitzgerald", "Tolstoy", "Dickens", "Melville"
     ];
 

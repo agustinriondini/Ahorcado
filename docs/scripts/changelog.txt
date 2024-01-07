@@ -72,6 +72,20 @@ SCRIPTS
  -Agregada accion location.reload() en kernel.js para reiniciar el juego y limpiar el campo hiddenword en index.html
  -Correccion de vision en UI2023.css. Corregido el centrado del juego en pantalla.
  -Ajustes generales en UI2023.css
+ -Correcciones de errores menores en el juego
+
+==================================================
+
+****  Version 2.3.3    (07 de enero de 2024)  ****
+--------------------------------------------------
+ 
+-Correccion de errores en la lista unluevent.js
+-Mejora del kernel.js (ahora muestra los espacios que correponden a cada letra de la palabra secreta con un "_")
+-Se establecieron valores predeterminado en el selector de dificultad de index.html
+-Se corrigio el valor de dificultad inicial a "Manual v2.2" en referencia a la vieja version del juego
+-Se actualizo el valor de version en los valores del _html_head_meta>description>content>v2.3.3
+-Se actualizo el valor de version en el campo footer>dev>version2.3.3 y fehca del update
+
  
 
 

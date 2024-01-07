@@ -68,11 +68,11 @@ $(document).ready(function () {
         for (let i = 0; i < hiddenword.length; i++) {
             if (hiddenword.charAt(i) == ' ') {
                 html += `
-                <span class='espacio'></span>
+                <span class='espacio'>_</span>
                 `;
             } else {
                 html += `
-                <span class='letra'></span>
+                <span class='letra'>_</span>
                 `;
             }
         }
