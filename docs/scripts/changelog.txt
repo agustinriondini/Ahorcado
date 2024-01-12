@@ -122,5 +122,8 @@ Build #30
 -Se actualizo con nuevas funciones selector.js para que guarde el estado de dificultad del juego.
 -Se soluciono la funcionabilidad del boton reiniciar. (bug_fixed)
 
+Build #31
+
+
 
               

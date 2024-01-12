@@ -376,7 +376,7 @@ html{
     cursor: pointer;
     color: red;
     border-color: red;
-    border-radius: 50%
+    border-radius: 50%;
 }
 .close:hover{
     background-color: black;
