@@ -8,7 +8,7 @@ $(document).ready(function () {
         words = '';
         fails = '';
 
-        $('#imagen_ahorcado').attr('src', 'http://drive.google.com/uc?export=view&id=123XEU0tV-JavXxVmk3wV42ygeW3tku1D');
+        $('#imagen_ahorcado').attr('src', './docs/images/composite/starter_image.png');
         $('#palabra').html('');
         $('#fails').html('');
 
@@ -138,17 +138,9 @@ $(document).ready(function () {
         fails += letra;
         words += letra;
 	
-        if(errores == 0){
-            $('#imagen_ahorcado').attr('src', 'http://drive.google.com/uc?export=view&id=123XEU0tV-JavXxVmk3wV42ygeW3tku1D');
-        }else if(errores == 1){
-            $('#imagen_ahorcado').attr('src', 'http://drive.google.com/uc?export=view&id=1vFdlLQjzaq5_qHzPu88rZfolqFXR1zRb');            
-        }else if(errores == 2){
-            $('#imagen_ahorcado').attr('src', 'http://drive.google.com/uc?export=view&id=1aexncQCP2hBh-7xaJvvL6YDKycmwaqWm');
-        }else if(errores == 3){
-            $('#imagen_ahorcado').attr('src', 'http://drive.google.com/uc?export=view&id=1hcwei7UOJLP1pzi38kA6LS1OOmkz5Nhw');
-        }else if(errores == 4){
-            $('#imagen_ahorcado').attr('src', 'http://drive.google.com/uc?export=view&id=18uD0wry0bfxGaq8Qiqg3BiordCNYuGV7');
-        }        
+        let imagenPath = `./docs/images/composite/starter_image${errores}_fallos.png`;
+
+        $('#imagen_ahorcado').attr('src', imagenPath);  
 
         if (html == '') {
             html = letra;
@@ -166,24 +158,20 @@ $(document).ready(function () {
     function gane() {
         $('#probar_letra').attr('disabled', true);
         $('#boton_probar').attr('disabled', true);
-
         $('#adivinar').attr('disabled', true);
         $('#boton_adivinar').attr('disabled', true);
-
-        $('#imagen_ahorcado').attr('src', 'http://drive.google.com/uc?export=view&id=1H1nrBllxQbpBf5SAGXlUJjagsYFYW-VS');
-
+        let imagenPath = './docs/images/composite/triunfo.png';
+        $('#imagen_ahorcado').attr('src', imagenPath);
         mostrarPalabra('gane');
     }
 
     function perdida() {
         $('#probar_letra').attr('disabled', true);
         $('#boton_probar').attr('disabled', true);
-
         $('#adivinar').attr('disabled', true);
         $('#boton_adivinar').attr('disabled', true);
-
-        $('#imagen_ahorcado').attr('src', 'http://drive.google.com/uc?export=view&id=18uD0wry0bfxGaq8Qiqg3BiordCNYuGV7');
-        mostrarPalabra('perdida');
+        let imagenPath = './docs/images/composite/fallos4.png';
+        $('#imagen_ahorcado').attr('src', imagenPath);
     }
 
     function iniciar() {

@@ -86,7 +86,24 @@ SCRIPTS
 -Se actualizo el valor de version en los valores del _html_head_meta>description>content>v2.3.3
 -Se actualizo el valor de version en el campo footer>dev>version2.3.3 y fehca del update
 
- 
+==================================================
+
+****  Version 2.3.4    (11 de enero de 2024)  ****
+--------------------------------------------------
+
+-Parche de correcciones en kernel.js
+(debido a una actualizacion de chrome, falla la verificacion de seguridad http// https//
+y se actualizo el codigo para que obtenga las imagenes de manera local y no desde una fuente externa)
+-Nueva directorio "composite" con libreria de imagenes en local
+-Actualizada la version en index.html
+-Corregidos los directorios de imagen en index.html e index_old.html
+-Eliminadas imagenes innecesarias
+-Eliminacion de iconos innecesaros
+-Eliminacion imagen QR
+-Actualizacion del changelog.txt
+
+Build #28 en modo de testing
+
 
 
 
