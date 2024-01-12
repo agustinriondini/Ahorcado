@@ -148,6 +148,9 @@ html{
     color: white;
     font-weight: lighter;
     max-width: 63px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .inputbox{
     min-width: 150px;
@@ -198,10 +201,12 @@ html{
     max-height: 110px;
     text-align: center;
     text-transform: uppercase;
-    color: green;
+    color: greenyellow;
     font-size: 1.3rem;
     font-weight: bolder;
-    background-color: rgba(187, 255, 0, 0.924);
+    border: solid 0.1rem greenyellow;
+    border-radius: 12.5px;
+    padding: 5px;
 }
 
 .fails_container{
@@ -214,10 +219,12 @@ html{
     scroll-behavior: smooth;
     text-align: center;
     text-transform: uppercase;
-    color:  red;
+    color:  goldenrod;
     font-size: 1.3rem;
     font-weight: bolder;
-    background-color: rgb(255, 208, 0);
+    border: solid 0.1rem goldenrod;
+    border-radius: 12.5px;
+    padding: 5px;
 }
 .reset_container{
     width: 100%;
@@ -243,12 +250,13 @@ html{
     color: white;
     font-size: 0.9rem;
     border: solid 0.1rem white;
+    border-radius: 12.5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
 }
 .btn_style_a:hover{
     background-color: rgba(56, 140, 242);
-    transition: 0.5s;
-    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(56, 140, 242, 0.8);
 }
 .modal-alert{
     font-size: 0.9rem;

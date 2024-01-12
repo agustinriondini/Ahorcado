@@ -170,7 +170,7 @@ $(document).ready(function () {
         $('#boton_probar').attr('disabled', true);
         $('#adivinar').attr('disabled', true);
         $('#boton_adivinar').attr('disabled', true);
-        let imagenPath = './docs/images/composite/fallos4.png';
+        let imagenPath = './docs/images/composite/starter_image4_fallos.png';
         $('#imagen_ahorcado').attr('src', imagenPath);
     }
 

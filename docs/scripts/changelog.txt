@@ -104,6 +104,12 @@ y se actualizo el codigo para que obtenga las imagenes de manera local y no desd
 
 Build #28 en modo de testing
 
+Build #29
+-Se corrigio la visualizacion de las secciones de palabra y letras
+-Se adapto el estilo de las secciones de palabra y letras para que coincida con el resto del UI2023
+-Se mejoro el estilo de botones
+-Se datalla numero de bouild previo al changelog
+
 
 
 
