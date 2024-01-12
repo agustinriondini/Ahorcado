@@ -110,8 +110,17 @@ Build #29
 -Se mejoro el estilo de botones
 -Se datalla numero de bouild previo al changelog
 
+==================================================
 
+****  Version 2.3.5    (12 de enero de 2024)  ****
+--------------------------------------------------
 
+Build #30
+-Se soluciono el problema con las notificaciones emergentes del juego en index.html (bug_fixed)
+-Se actualizo el numero de version en index.html
+-Se rediseñaron las notificaciones emergentes. UI2023.css
+-Se actualizo con nuevas funciones selector.js para que guarde el estado de dificultad del juego.
+-Se soluciono la funcionabilidad del boton reiniciar. (bug_fixed)
 
 
               
