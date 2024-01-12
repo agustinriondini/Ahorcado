@@ -348,7 +348,7 @@ html{
     min-width: 200px;
     max-width: 300px;
     height: auto;
-    display: flex;
+    display: none;
     justify-content: center;
     margin: auto;
     align-items: center;

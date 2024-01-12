@@ -125,6 +125,7 @@ Build #30
 Build #31
 Build #32
 -Modal_display_flex sustituido por modal_display_none en UI2023.css
+Build #33
 
 
               
