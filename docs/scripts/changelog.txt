@@ -127,5 +127,9 @@ Build #32
 -Modal_display_flex sustituido por modal_display_none en UI2023.css
 Build #33
 
+Build #34
+-Correccion de errores en kernel.js. Ahora la palabra nuevamente es revelada al perder el juego. (bug fixed)
+-Pequeños cambios de aspecto del selector de dificultad y del boton de cierre del modal en UI2023.js
+-Se cambio en index.html el idioma y locacion por defecto de <html="en"> a <html="es-AR">
 
               

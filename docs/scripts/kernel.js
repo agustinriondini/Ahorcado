@@ -172,6 +172,7 @@ $(document).ready(function () {
         $('#boton_adivinar').attr('disabled', true);
         let imagenPath = './docs/images/composite/starter_image4_fallos.png';
         $('#imagen_ahorcado').attr('src', imagenPath);
+        mostrarPalabra('perdida');
     }
 
     function iniciar() {

@@ -113,6 +113,13 @@ html{
     height: auto;
     min-height: 50px;
 }
+#selectDificultad{
+    color: black;
+    border: solid 0.1rem transparent;
+    border-radius: 12.5px;
+    text-align: center;
+    cursor: pointer;
+}
 .selector_subtitle{
     color: white;
 }
@@ -381,7 +388,7 @@ html{
 .close:hover{
     background-color: black;
     color: white;
-    border-color: black;
+    border-color: white;
     transition: ease-in-out 0.2s;
     font-weight: bolder;
 }
