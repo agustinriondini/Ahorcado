@@ -6,6 +6,7 @@ html{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: auto;
 }
 .bud{
     background-image: url(../images/mainbg.svg);
@@ -16,6 +17,7 @@ html{
     min-width: 300px;
     max-width: 1000px;
     height: auto;
+    margin: auto;
 }
 /*Centro de notificaciones y mensajes*/
 .msg_container{
@@ -33,11 +35,9 @@ html{
 }
 .msg{
     color: white;
-    font-size: 1.2rem;
-    display: inline-flex;
-    justify-content: space-evenly;
+    font-size: 1rem;
 }
-.msg>a{
+.msg_container>a{
     text-decoration: none;
     display: flex;
     justify-content: center;
@@ -48,7 +48,7 @@ html{
     color: white;
 }
 .advertise:hover{
-    color: yellowgreen;
+    color: goldenrod;
     transition:ease-in-out 1s;
 }
 /*----------------------------------*/
@@ -101,7 +101,7 @@ html{
 
 /*Interfaz de usuario*/
 .selector{
-    width: 45%;
+    width: 100%;
     min-width: 300px;
     max-width: 400px;
     display: flex;
@@ -304,32 +304,40 @@ html{
     margin: auto;
 }
 .developer_container{
-    width: 50%;
+    width: 45%;
     min-width: 300px;
     max-width: 450px;
     height: auto;
     min-height: 50px;
-    display: flexbox;
+    max-height: 80px;
+    display: flex;
     align-items: center;
     justify-content: space-evenly;
     margin: auto;
 }
 .developer_container>a>img{
     width: 100%;
-    min-width: 50px;
-    max-width: 70px;
-    aspect-ratio: 2/2;
+    min-width: 48px;
+    max-width: 72px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
+.developer_container>a>img:hover{
+    filter: opacity(70%);
+}
 .developer_rights{
-    width: 50%;
+    width: 45%;
     min-width: 300px;
     max-width: 450px;
     height: auto;
-    display: flexbox;
+    min-height: 50px;
+    max-height: 80px;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 50px;
+    align-items: center;
     gap: 5px;
 }
 .dev{
@@ -337,7 +345,7 @@ html{
     color: white;
     font-weight: lighter;
 }
-/*Mensajes de erro!*/
+/*Mensajes de error! (popup)*/
 .modal-header{
     width: 100%;
     min-width: 200px;
@@ -404,4 +412,32 @@ html{
     color: red;
     font-weight: bolder;
 
+}
+/*version compilacion*/
+.version{
+    width: 100%;
+    min-width: 300px;
+    max-width: 1000px;
+    height: auto;
+    min-height: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.compilacion{
+    display: flex;
+    margin: auto;
+    height: 100%;
+    font-size: 0.8rem;
+    color: grey;
+}
+.jarsoft{
+    display: flex;
+    margin: auto;
+    font-size: 1rem;
+    color: grey;
+    font-style: italic;
 }

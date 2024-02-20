@@ -13,6 +13,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="./docs/scripts/kernel.js"></script>
     <script src="./docs/scripts/selector.js"></script>
+    <!--Version-->
+    <script src="./docs/scripts/version.js"></script>
     <!--Interfaz-->
     <link rel="stylesheet" href="./docs/styles/reset.css">
     <link rel="stylesheet" href="./docs/styles/UI2023.css">
@@ -20,7 +22,8 @@
 </head>
 <body class="bud">
     <div class="msg_container">
-        <h4 class="msg">Estas jugando al ahorcado! Apoya el desarrollo<a href="https://link.mercadopago.com.ar/jarsoftproject" class="btn_style_a">Donar</a></h4>
+        <h4 class="msg">Estas jugando al ahorcado! Apoya el desarrollo</h4>
+        <a href="https://link.mercadopago.com.ar/jarsoftproject" class="btn_style_a">Donar</a>
         <a href="./index-old.html" class="advertise">Jugar a la version anterior v2.2</a>
     </div>
     <main id="principal">
@@ -35,18 +38,18 @@
                         <option value="oldgame" id="option_infate" selected>Manual v2.2</option>
                         <option value="facil" id="option_facil">Facil</option>
                         <option value="dificil" id="option_dificil">Dificil</option>
-                        <option value="unlu" id="option_unlu">UNLU (Beta)</option>
+                        <option value="unlu" id="option_unlu" hidden>UNLU (Beta)</option> <!--desactivado en la build#35-->
                     </select>
                 </div>
                 <div class="common_container">
                     <h3 class="subtitle">Pablabra a descubrir:</h3>
-                    <input id="hiddenword" type="text" class="inputbox" placeholder="Ingresa una palabra para que el oponente descubra" aria-describedby="label_hiddenword">
+                    <input id="hiddenword" type="text" class="inputbox" placeholder="Selec. dificultad" aria-describedby="label_hiddenword">
                     <button id="boton_iniciar" class="btn_style_a">Jugar!</button>
                 </div>
 
                 <div class="common_container">
                     <h3 class="subtitle">Ingrese una letra:</h3>
-                    <input id="probar_letra" type="text" class="inputbox" placeholder="?????"
+                    <input id="probar_letra" type="text" class="inputbox" placeholder="A-z"
                     aria-describedby="label_probar_letra" maxlength="1" minlength="1" disabled>
                     <button id="boton_probar" class="btn_style_a" disabled>Probar</button>
                 </div>
@@ -100,9 +103,12 @@
                 <a href="https://www.instagram.com/agustinriondini/"><img  class="one" src="./docs/images/icons/instagram.png"></a>
             </div>
             <div class="developer_rights">
-                <p class="dev">JARSoft | Games | 2022-2023</p>
-                <p class="dev">Version 2.3.5 (Update 12/01/2024)</p>
+                <p class="dev">JARSoft | Games | 2022-2024</p>
                 <p class="dev">Contacto: juan.riondini@gmail.com</p>
+            </div>
+            <div class="version">
+                <span class="compilacion" id="updateVer">Corroborando version. Espere...</span>
+                <h6 class="jarsoft">JARSoft</h6>
             </div>
         </section>
     </footer>
