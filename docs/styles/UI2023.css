@@ -1,6 +1,27 @@
 *{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+/*temporizador*/
+@font-face {
+    font-family: 'Digital-7';
+    src: url('../fuentes/digital-7.ttf') format('truetype');
+}
+
+#temporizador{
+    width: 25%;
+    min-width: fit-content;
+    height: 100%;
+    min-height: 30px;
+    max-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    color: yellowgreen;
+    font-size: 1.5rem;
+    font-family: 'Digital-7', sans-serif;
+    background-color: rgba(0, 0, 0, 0.7);
+}
 html{
     display: flex;
     flex-direction: column;
@@ -62,8 +83,9 @@ html{
     min-height: 300px;
     max-height: 1000px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin: auto;
     background-color: rgba(4, 4, 4, 0.300);
 }
@@ -304,9 +326,9 @@ html{
     margin: auto;
 }
 .developer_container{
-    width: 45%;
-    min-width: 300px;
-    max-width: 450px;
+    width: 30%;
+    min-width: 200px;
+    max-width: 300px;
     height: auto;
     min-height: 50px;
     max-height: 80px;
@@ -316,16 +338,22 @@ html{
     margin: auto;
 }
 .developer_container>a>img{
-    width: 100%;
+    width: 70%;
     min-width: 48px;
     max-width: 72px;
     aspect-ratio: 1/1;
     display: flex;
-    justify-content: center;
+    margin: auto;
+    justify-content: space-evenly;
     align-items: center;
+    filter: opacity(70%);
+    border-radius: 50%;
+    border: solid 0.2rem transparent;
 }
 .developer_container>a>img:hover{
-    filter: opacity(70%);
+    filter: opacity(100%);
+    border-color: goldenrod;
+    transition: ease-in-out 0.3s;
 }
 .developer_rights{
     width: 45%;
@@ -440,4 +468,23 @@ html{
     font-size: 1rem;
     color: grey;
     font-style: italic;
+}
+.btn {
+    min-width: 140px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.btn:hover {
+    background-color: #01458e;
+}
+
+.btn:active {
+    cursor: progress;
 }

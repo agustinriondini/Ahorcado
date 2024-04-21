@@ -1,5 +1,7 @@
 $(document).ready(function () {
     var errores, correctos, hiddenword, words, fails;
+    var tiempoRestante = 45;
+    var temporizadorInterval;
 
     function inicializar() {
         errores = 0;
@@ -29,12 +31,34 @@ $(document).ready(function () {
         $('#hiddenword').focus();
     }
 
+    // FunciÃ³n para iniciar el temporizador si stopTemporizador no estÃ¡ marcado
+    function iniciarTemporizador() {
+        if (!$('#stopTemporizador').prop('checked')) {
+            temporizadorInterval = setInterval(function() {
+                // Reducir el tiempo restante
+                tiempoRestante--;
+
+                // Actualizar el temporizador en el DOM
+                $('#temporizador').text('Tiempo restante: ' + tiempoRestante);
+
+                // Verificar si el tiempo ha llegado a cero
+                if (tiempoRestante <= 0) {
+                    clearInterval(temporizadorInterval);
+                    perdida(); // Llamar a la funciÃ³n perdida cuando se acabe el tiempo
+                }
+            }, 1000);
+        }
+    }
+
+    // FunciÃ³n para detener el temporizador
+    function detenerTemporizador() {
+        clearInterval(temporizadorInterval);
+    }
+
     function cadenaPermitida(cadena) {
         let expresion = '';
-
         cadena = cadena.toLowerCase();
-        expresion = /^[a-zñ ]+$/;
-
+        expresion = /^[a-zÃ± ]+$/;
         if (expresion.test(cadena)) {
             return true;
         } else {
@@ -44,7 +68,6 @@ $(document).ready(function () {
 
     function verifyWords(letra) {
         letra = letra.toLowerCase();
-
         if (words.indexOf(letra) != -1) {
             return true;
         } else {
@@ -54,7 +77,6 @@ $(document).ready(function () {
 
     function verificarLetra(letra) {
         letra = letra.toLowerCase();
-
         if (hiddenword.indexOf(letra) != -1) {
             return true;
         } else {
@@ -64,7 +86,6 @@ $(document).ready(function () {
 
     function establecerEspacios() {
         let html = '';
-
         for (let i = 0; i < hiddenword.length; i++) {
             if (hiddenword.charAt(i) == ' ') {
                 html += `
@@ -76,13 +97,11 @@ $(document).ready(function () {
                 `;
             }
         }
-
         $('#palabra').html(html);
     }
 
     function escribirSpan(indice, letra) {
         let lista_span = $('span');
-
         for (let i = 0; i < lista_span.length; i++) {
             if (i == indice) {
                 lista_span[i].innerHTML = letra;
@@ -92,9 +111,7 @@ $(document).ready(function () {
     
     function mostrarPalabra(opcion) {
         let html = '';
-
         for (let i = 0; i < hiddenword.length; i++) {
-
             if (hiddenword.charAt(i) == ' ') {
                 html += `
                     <span class='espacio'>${hiddenword.charAt(i)}</span>
@@ -105,15 +122,12 @@ $(document).ready(function () {
                 `;
             }
         }
-
         $('#palabra').html(html);
     }
 
     function incluirLetra(letra) {
         let numero_span = 0;
-
         letra = letra.toLowerCase();
-
         for (let i = 0; i < hiddenword.length; i++) {
             if (hiddenword.charAt(i) == letra) {
                 correctos++;
@@ -121,7 +135,6 @@ $(document).ready(function () {
                 words += letra;
             }
         }
-
         if (correctos == hiddenword.replace(new RegExp(' ', 'g'), '').length) {
             gane();
         }
@@ -130,32 +143,25 @@ $(document).ready(function () {
     function incluirFallo(letra) {
         let div_fails = $('#fails'),
             html = div_fails.html();
-
         letra = letra.toLowerCase();
-
         errores++;
-
         fails += letra;
         words += letra;
-	
         let imagenPath = `./docs/images/composite/starter_image${errores}_fallos.png`;
-
         $('#imagen_ahorcado').attr('src', imagenPath);  
-
         if (html == '') {
             html = letra;
         } else {
             html += '-' + letra;
         }
-
         div_fails.html(html);
-
         if (errores == 4) {
             perdida();
         }
     }
 
     function gane() {
+        detenerTemporizador();
         $('#probar_letra').attr('disabled', true);
         $('#boton_probar').attr('disabled', true);
         $('#adivinar').attr('disabled', true);
@@ -166,6 +172,7 @@ $(document).ready(function () {
     }
 
     function perdida() {
+        detenerTemporizador();
         $('#probar_letra').attr('disabled', true);
         $('#boton_probar').attr('disabled', true);
         $('#adivinar').attr('disabled', true);
@@ -177,29 +184,23 @@ $(document).ready(function () {
 
     function iniciar() {
         let input_hiddenword = $('#hiddenword');
-
         if (input_hiddenword.val().length > 0) {
             if (cadenaPermitida(input_hiddenword.val())) {
                 hiddenword = input_hiddenword.val().toLowerCase();
-
                 input_hiddenword.attr("disabled", true);
                 input_hiddenword.attr("type", "password");
                 $('#boton_iniciar').attr("disabled", true);
-
                 $('#probar_letra').attr("disabled", false);
                 $('#boton_probar').attr("disabled", false);
-
                 $('#adivinar').attr("disabled", false);
                 $('#boton_adivinar').attr("disabled", false);
-
                 establecerEspacios();
-
                 $('#probar_letra').focus();
+                iniciarTemporizador();
             } else {
                 $('#etiqueta_mensaje').html('Datos Incorrectos');
-                $('#cuerpo_mensaje').html('La palabra debe contener caracteres de la A a la Z únicamente.');
+                $('#cuerpo_mensaje').html('La palabra debe contener caracteres de la A a la Z Ãºnicamente.');
                 $('#mensaje').modal('show')
-
                 $('#mensaje').on('hidden.bs.modal', function () {
                     input_hiddenword.val('');
                     input_hiddenword.focus();
@@ -209,7 +210,6 @@ $(document).ready(function () {
             $('#etiqueta_mensaje').html('Datos Incorrectos');
             $('#cuerpo_mensaje').html('Debe escribir la palabra secreta.');
             $('#mensaje').modal('show')
-
             $('#mensaje').on('hidden.bs.modal', function () {
                 input_hiddenword.focus();
             })
@@ -218,7 +218,6 @@ $(document).ready(function () {
 
     function probarLetra() {
         let input_probar_letra = $('#probar_letra');
-
         if (input_probar_letra.val() != ' ') {
             if (input_probar_letra.val().length > 0) {
                 if (cadenaPermitida(input_probar_letra.val())) {
@@ -228,14 +227,12 @@ $(document).ready(function () {
                         } else {
                             incluirFallo(input_probar_letra.val())
                         }
-
                         input_probar_letra.val('');
                         input_probar_letra.focus();
                     } else {
                         $('#etiqueta_mensaje').html('Datos Incorrectos');
                         $('#cuerpo_mensaje').html('La letra ya ha sido probada.');
                         $('#mensaje').modal('show')
-
                         $('#mensaje').on('hidden.bs.modal', function () {
                             input_probar_letra.val('');
                             input_probar_letra.focus();
@@ -243,9 +240,8 @@ $(document).ready(function () {
                     }
                 } else {
                     $('#etiqueta_mensaje').html('Datos Incorrectos');
-                    $('#cuerpo_mensaje').html('Sólo se permiten caracteres de la A a la Z únicamente.');
+                    $('#cuerpo_mensaje').html('SÃ³lo se permiten caracteres de la A a la Z Ãºnicamente.');
                     $('#mensaje').modal('show')
-
                     $('#mensaje').on('hidden.bs.modal', function () {
                         input_probar_letra.val('');
                         input_probar_letra.focus();
@@ -255,7 +251,6 @@ $(document).ready(function () {
                 $('#etiqueta_mensaje').html('Datos Incorrectos');
                 $('#cuerpo_mensaje').html('Debe escribir la letra a probar.');
                 $('#mensaje').modal('show')
-
                 $('#mensaje').on('hidden.bs.modal', function () {
                     input_hiddenword.focus();
                 })
@@ -268,7 +263,6 @@ $(document).ready(function () {
 
     function adivinar() {
         let input_adivinar = $('#adivinar');
-
         if (input_adivinar.val().length > 0) {
             if (cadenaPermitida(input_adivinar.val())) {
                 if (input_adivinar.val().toLowerCase() == hiddenword) {
@@ -278,9 +272,8 @@ $(document).ready(function () {
                 }
             } else {
                 $('#etiqueta_mensaje').html('Datos Incorrectos');
-                $('#cuerpo_mensaje').html('Sólo se permiten caracteres de la A a la Z únicamente.');
+                $('#cuerpo_mensaje').html('SÃ³lo se permiten caracteres de la A a la Z Ãºnicamente.');
                 $('#mensaje').modal('show')
-
                 $('#mensaje').on('hidden.bs.modal', function () {
                     input_adivinar.val('');
                     input_adivinar.focus();
@@ -290,7 +283,6 @@ $(document).ready(function () {
             $('#etiqueta_mensaje').html('Datos Incorrectos');
             $('#cuerpo_mensaje').html('Debe escribir la palabra a adivinar.');
             $('#mensaje').modal('show')
-
             $('#mensaje').on('hidden.bs.modal', function () {
                 input_adivinar.focus();
             })
@@ -298,7 +290,7 @@ $(document).ready(function () {
     }
 
     function finalizar() {
-        //desactivada y reemplazada por la siguiente accion. modo prueba inicializar();
+        detenerTemporizador();
         location.reload();
     }
 

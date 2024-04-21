@@ -12,10 +12,10 @@ function pruebaPiloto() {
             dificultadIncrementada.type = "text/javascript";
 
         document.head.appendChild(dificultadIncrementada);
-    }else if (selectedValue === "unlu"){
+    }else if (selectedValue === "ultimate"){
 
         var dificultadIncrementada = document.createElement("script");
-        dificultadIncrementada.src = "docs/scripts/unluevent.js";
+        dificultadIncrementada.src = "docs/scripts/dificultad+++.js";
         dificultadIncrementada.type = "text/javascript";
 
         document.head.appendChild(dificultadIncrementada);

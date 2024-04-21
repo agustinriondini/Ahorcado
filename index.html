@@ -7,6 +7,7 @@
     <meta name="description" content="El juego del ahorcado. JARSoft v2.3.5">
     <meta name="keywords" content="el ahorcado, juego del ahorcado">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./docs/images/icons/joystick.png" type="image/x-icon">
     <!--Motor del juego-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -27,18 +28,21 @@
         <a href="./index-old.html" class="advertise">Jugar a la version anterior v2.2</a>
     </div>
     <main id="principal">
+        <div class="temporizadorContainer">
+            <div id="temporizador">⏱️Tiempo restante: 00</div>
+        </div>
         <div class="game_container">
             <div class="display_container">
                 <img id="imagen_ahorcado" src="img/starter_image.png" class="estilo-imagen" alt="Imagen juego ahorcado">
             </div>
             <div class="pannel_container">
                 <div class="selector">
-                    <h4 class="selector_subtitle">Seleccione dificultad:</h4>
+                    <h4 class="selector_subtitle">🕹️Seleccione dificultad:</h4>
                     <select name="selector_dificultad" id="selectDificultad" onchange="pruebaPiloto()" required>
                         <option value="oldgame" id="option_infate" selected>Manual v2.2</option>
                         <option value="facil" id="option_facil">Facil</option>
-                        <option value="dificil" id="option_dificil">Dificil</option>
-                        <option value="unlu" id="option_unlu" hidden>UNLU (Beta)</option> <!--desactivado en la build#35-->
+                        <option value="dificil" id="option_dificil">Moderado</option>
+                        <option value="ultimate" id="option_ultimate">Dificil</option>
                     </select>
                 </div>
                 <div class="common_container">
@@ -104,7 +108,7 @@
             </div>
             <div class="developer_rights">
                 <p class="dev">JARSoft | Games | 2022-2024</p>
-                <p class="dev">Contacto: juan.riondini@gmail.com</p>
+                <a class="btn" href="mailto:juan.riondini@gmail.com">📧 Contacto</a>
             </div>
             <div class="version">
                 <span class="compilacion" id="updateVer">Corroborando version. Espere...</span>
