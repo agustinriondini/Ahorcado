@@ -1,4 +1,15 @@
 ======================================
+## v2.3.7 public_release_v2.3.8_update27052024Build#37
+-[New] Nueva pantalla de inicio del juego
+-[New] Nuevo menu de ajustes
+-[New] Nuevo boton con trucos para activar. Los trucos fuerzan al juego a operar de una manera no nativa, por lo que pueden generarse errores de cache o visualizacion mientras esten activados.
+-[Deleted] Se elimino el viejo banner con el boton de donacion
+-[Change] Se cambio el link para jugar a la vieja version por un boton
+-[UI] Bugfixes.
+-[Update] kernel.js actualizado para ser compatible con las nuevas funciones.
+-[Update] Actualizado el readme.md y la version
+
+======================================
 ## v2.3.7 public_release_v2.3.7_update21042024Build#36
 -[New] Temporizador. 45 segundos para ganar la partida.
 -[New] Dificultad maxima agregada a traves del selector. La lista contiene elementos en español e ingles. (dificultad+++.js).

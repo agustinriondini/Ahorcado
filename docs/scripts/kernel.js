@@ -2,6 +2,7 @@ $(document).ready(function () {
     var errores, correctos, hiddenword, words, fails;
     var tiempoRestante = 45;
     var temporizadorInterval;
+    var erroresMaximos = 4;
 
     function inicializar() {
         errores = 0;
@@ -29,11 +30,20 @@ $(document).ready(function () {
         $('#boton_adivinar').attr("disabled", true);
 
         $('#hiddenword').focus();
+
+        // Restaurar valores de los checkboxes desde local storage
+        $('#tempo').prop('checked', localStorage.getItem('tempo') === 'true');
+        $('#incrementarIntentos').prop('checked', localStorage.getItem('incrementarIntentos') === 'true');
+        $('#revelarpalabra').prop('checked', localStorage.getItem('revelarpalabra') === 'true');
+
+        // Verificar el estado de los checkboxes
+        verificarCheckboxes();
     }
 
-    // FunciÃ³n para iniciar el temporizador si stopTemporizador no estÃ¡ marcado
+    // Función para iniciar el temporizador si tempo no está marcado
     function iniciarTemporizador() {
-        if (!$('#stopTemporizador').prop('checked')) {
+        detenerTemporizador(); // Asegurarse de que no haya un temporizador corriendo
+        if (!$('#tempo').prop('checked')) {
             temporizadorInterval = setInterval(function() {
                 // Reducir el tiempo restante
                 tiempoRestante--;
@@ -44,13 +54,13 @@ $(document).ready(function () {
                 // Verificar si el tiempo ha llegado a cero
                 if (tiempoRestante <= 0) {
                     clearInterval(temporizadorInterval);
-                    perdida(); // Llamar a la funciÃ³n perdida cuando se acabe el tiempo
+                    perdida(); // Llamar a la función perdida cuando se acabe el tiempo
                 }
             }, 1000);
         }
     }
 
-    // FunciÃ³n para detener el temporizador
+    // Función para detener el temporizador
     function detenerTemporizador() {
         clearInterval(temporizadorInterval);
     }
@@ -58,46 +68,30 @@ $(document).ready(function () {
     function cadenaPermitida(cadena) {
         let expresion = '';
         cadena = cadena.toLowerCase();
-        expresion = /^[a-zÃ± ]+$/;
-        if (expresion.test(cadena)) {
-            return true;
-        } else {
-            return false;
-        }
+        expresion = /^[a-zñ ]+$/;
+        return expresion.test(cadena);
     }
 
     function verifyWords(letra) {
         letra = letra.toLowerCase();
-        if (words.indexOf(letra) != -1) {
-            return true;
-        } else {
-            return false;
-        }
+        return words.indexOf(letra) !== -1;
     }
 
     function verificarLetra(letra) {
         letra = letra.toLowerCase();
-        if (hiddenword.indexOf(letra) != -1) {
-            return true;
-        } else {
-            return false;
-        }
+        return hiddenword.indexOf(letra) !== -1;
     }
 
     function establecerEspacios() {
         let html = '';
         for (let i = 0; i < hiddenword.length; i++) {
             if (hiddenword.charAt(i) == ' ') {
-                html += `
-                <span class='espacio'>_</span>
-                `;
+                html += `<span class='espacio'>_</span> `;
             } else {
-                html += `
-                <span class='letra'>_</span>
-                `;
+                html += `<span class='letra'>_</span> `;
             }
         }
-        $('#palabra').html(html);
+        $('#palabra').html(html.trim());
     }
 
     function escribirSpan(indice, letra) {
@@ -113,20 +107,15 @@ $(document).ready(function () {
         let html = '';
         for (let i = 0; i < hiddenword.length; i++) {
             if (hiddenword.charAt(i) == ' ') {
-                html += `
-                    <span class='espacio'>${hiddenword.charAt(i)}</span>
-                `;
+                html += `<span class='espacio'>${hiddenword.charAt(i)}</span> `;
             } else {
-                html += `
-                    <span class='letra letra-${opcion}'>${hiddenword.charAt(i)}</span>
-                `;
+                html += `<span class='letra letra-${opcion}'>${hiddenword.charAt(i)}</span> `;
             }
         }
-        $('#palabra').html(html);
+        $('#palabra').html(html.trim());
     }
 
     function incluirLetra(letra) {
-        let numero_span = 0;
         letra = letra.toLowerCase();
         for (let i = 0; i < hiddenword.length; i++) {
             if (hiddenword.charAt(i) == letra) {
@@ -155,7 +144,7 @@ $(document).ready(function () {
             html += '-' + letra;
         }
         div_fails.html(html);
-        if (errores == 4) {
+        if (errores == erroresMaximos) {
             perdida();
         }
     }
@@ -196,23 +185,24 @@ $(document).ready(function () {
                 $('#boton_adivinar').attr("disabled", false);
                 establecerEspacios();
                 $('#probar_letra').focus();
-                iniciarTemporizador();
+                verificarCheckboxes(); // Verificar el estado de los checkboxes y ajustar el juego en consecuencia
+                iniciarTemporizador(); // Iniciar el temporizador al iniciar el juego
             } else {
                 $('#etiqueta_mensaje').html('Datos Incorrectos');
-                $('#cuerpo_mensaje').html('La palabra debe contener caracteres de la A a la Z Ãºnicamente.');
-                $('#mensaje').modal('show')
+                $('#cuerpo_mensaje').html('La palabra debe contener caracteres de la A a la Z únicamente.');
+                $('#mensaje').modal('show');
                 $('#mensaje').on('hidden.bs.modal', function () {
                     input_hiddenword.val('');
                     input_hiddenword.focus();
-                })
+                });
             }
         } else {
             $('#etiqueta_mensaje').html('Datos Incorrectos');
             $('#cuerpo_mensaje').html('Debe escribir la palabra secreta.');
-            $('#mensaje').modal('show')
+            $('#mensaje').modal('show');
             $('#mensaje').on('hidden.bs.modal', function () {
                 input_hiddenword.focus();
-            })
+            });
         }
     }
 
@@ -225,35 +215,35 @@ $(document).ready(function () {
                         if (verificarLetra(input_probar_letra.val())) {
                             incluirLetra(input_probar_letra.val());
                         } else {
-                            incluirFallo(input_probar_letra.val())
+                            incluirFallo(input_probar_letra.val());
                         }
                         input_probar_letra.val('');
                         input_probar_letra.focus();
                     } else {
                         $('#etiqueta_mensaje').html('Datos Incorrectos');
                         $('#cuerpo_mensaje').html('La letra ya ha sido probada.');
-                        $('#mensaje').modal('show')
+                        $('#mensaje').modal('show');
                         $('#mensaje').on('hidden.bs.modal', function () {
                             input_probar_letra.val('');
                             input_probar_letra.focus();
-                        })
+                        });
                     }
                 } else {
                     $('#etiqueta_mensaje').html('Datos Incorrectos');
-                    $('#cuerpo_mensaje').html('SÃ³lo se permiten caracteres de la A a la Z Ãºnicamente.');
-                    $('#mensaje').modal('show')
+                    $('#cuerpo_mensaje').html('Sólo se permiten caracteres de la A a la Z únicamente.');
+                    $('#mensaje').modal('show');
                     $('#mensaje').on('hidden.bs.modal', function () {
                         input_probar_letra.val('');
                         input_probar_letra.focus();
-                    })
+                    });
                 }
             } else {
                 $('#etiqueta_mensaje').html('Datos Incorrectos');
                 $('#cuerpo_mensaje').html('Debe escribir la letra a probar.');
-                $('#mensaje').modal('show')
+                $('#mensaje').modal('show');
                 $('#mensaje').on('hidden.bs.modal', function () {
-                    input_hiddenword.focus();
-                })
+                    input_probar_letra.focus();
+                });
             }
         } else {
             input_probar_letra.val('');
@@ -272,26 +262,47 @@ $(document).ready(function () {
                 }
             } else {
                 $('#etiqueta_mensaje').html('Datos Incorrectos');
-                $('#cuerpo_mensaje').html('SÃ³lo se permiten caracteres de la A a la Z Ãºnicamente.');
-                $('#mensaje').modal('show')
+                $('#cuerpo_mensaje').html('Sólo se permiten caracteres de la A a la Z únicamente.');
+                $('#mensaje').modal('show');
                 $('#mensaje').on('hidden.bs.modal', function () {
                     input_adivinar.val('');
                     input_adivinar.focus();
-                })
+                });
             }
         } else {
             $('#etiqueta_mensaje').html('Datos Incorrectos');
             $('#cuerpo_mensaje').html('Debe escribir la palabra a adivinar.');
-            $('#mensaje').modal('show')
+            $('#mensaje').modal('show');
             $('#mensaje').on('hidden.bs.modal', function () {
                 input_adivinar.focus();
-            })
+            });
         }
     }
 
     function finalizar() {
         detenerTemporizador();
         location.reload();
+    }
+
+    function verificarCheckboxes() {
+        // Verificar si incrementarIntentos está marcado
+        if ($('#incrementarIntentos').prop('checked')) {
+            erroresMaximos = 9999999;
+        } else {
+            erroresMaximos = 4; // Valor por defecto
+        }
+
+        // Verificar si revelarpalabra está marcado
+        if ($('#revelarpalabra').prop('checked')) {
+            $('#hiddenword').attr("type", "text");
+        } else {
+            $('#hiddenword').attr("type", "password");
+        }
+
+        // Guardar el estado de los checkboxes en local storage
+        localStorage.setItem('tempo', $('#tempo').prop('checked'));
+        localStorage.setItem('incrementarIntentos', $('#incrementarIntentos').prop('checked'));
+        localStorage.setItem('revelarpalabra', $('#revelarpalabra').prop('checked'));
     }
 
     function main() {
@@ -318,6 +329,9 @@ $(document).ready(function () {
                 adivinar();
             }
         });
+
+        // Verificar cambios en los checkboxes
+        $('#tempo, #incrementarIntentos, #revelarpalabra').change(verificarCheckboxes);
     }
 
     main();

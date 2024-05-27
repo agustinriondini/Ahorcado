@@ -14,20 +14,53 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="./docs/scripts/kernel.js"></script>
     <script src="./docs/scripts/selector.js"></script>
+    <script src="./docs/scripts/menu.js"></script>
     <!--Version-->
     <script src="./docs/scripts/version.js"></script>
     <!--Interfaz-->
     <link rel="stylesheet" href="./docs/styles/reset.css">
     <link rel="stylesheet" href="./docs/styles/UI2023.css">
+    <link rel="stylesheet" href="./docs/styles/mainscreen.css">
+    <link rel="stylesheet" href="/docs/styles/menu.css">
     <title>JARSoft Games | El ahorcado</title>
 </head>
 <body class="bud">
-    <div class="msg_container">
-        <h4 class="msg">Estas jugando al ahorcado! Apoya el desarrollo</h4>
-        <a href="https://link.mercadopago.com.ar/jarsoftproject" class="btn_style_a">Donar</a>
-        <a href="./index-old.html" class="advertise">Jugar a la version anterior v2.2</a>
-    </div>
     <main id="principal">
+        <div id="screen" style="display: flex;">
+            <div id="welcome">
+                <img src="./docs/images/mainlogoahorccado.png" alt="elahorcadoLogo" id="gameLogo">
+                <h1 id="gameTitle">JARSoft© | El ahorcado®</h1>
+                <h4 id="gameSubtitle">El clasico juego del ahorcado</h4>
+                <div id="welcomeButtons"><button id="activate" onclick="ocultarpresentacion()">🎮 Jugar | Continuar</button></div>
+            </div>
+        </div>
+        <div class="commandCenter">
+            <button id="toggleMenu" onclick="openMenu()">⚙️</button>
+        </div>
+        <div id="manto" style="display: none;"></div>
+        <div id="menuwrapper" class="wrapper" style="display: none;">
+            <div id="mainMenu" class="mainMenuStyle">
+                <div class="controlMenuBtns">
+                    <button class="controlBtn" onclick="closeMenu()">Cerrar Ⅹ</button>
+                </div>
+                <div id="mainMenuButtons" class="menuContentStyle">
+                    <button class="menuBtn" onclick="play()">🎮 Jugar</button>
+                    <button class="menuBtn" onclick="menutrucos()">🧰 Trucos</button>
+                    <button class="menuBtn" onclick="pushversion()">🦖 Old Ver.</button>
+                </div>
+            </div>
+        </div>
+        <div id="trucos" class="wrapper" style="display: none;">
+            <div class="controlMenuBtns">
+                <button class="controlBtn" onclick="back()">← Volver</button>
+            </div>
+            <div id="trucos" class="menuContentStyle">
+                <div class="trickContainer"><label for="temporizador" class="trickDetail">Remover temporizador ⌛</label><input type="checkbox" name="" id="tempo"></div>
+                <div class="trickContainer"><label for="errores" class="trickDetail">Extender intentos 🎯</label><input type="checkbox" name="" id="incrementarIntentos"></div>
+                <div class="trickContainer"><label for="revelacion" class="trickDetail">Revelar palabra 💫</label><input type="checkbox" name="" id="revelarpalabra"></div>
+                <div class="trickContainer"><label for="boost" class="trickDetail">Algoritmo selector mejorado 🤖</label><input type="checkbox" name="" id="gameBooster"></div>
+            </div>
+        </div>
         <div class="temporizadorContainer">
             <div id="temporizador">⏱️Tiempo restante: 00</div>
         </div>
