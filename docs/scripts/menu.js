@@ -40,40 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = './index-old.html';
     }
 
-    function ocultarpresentacion() {
-        const screen = document.getElementById('screen');
-        screen.style.display = "none";
-        // Guardar el tiempo en el que se oculta la pantalla
-        localStorage.setItem('screenHiddenTime', Date.now());
-        // Guardar el estado de ocultación
-        localStorage.setItem('isScreenHidden', 'true');
-        // Establecer un temporizador para mostrar la pantalla después de 40 minutos
-        setTimeout(() => {
-            localStorage.removeItem('isScreenHidden');
-            location.reload();
-        }, 40 * 60 * 1000); // 40 minutos en milisegundos
-    }
-
-    // Verificar si la pantalla debe estar oculta al cargar la página
-    const isScreenHidden = localStorage.getItem('isScreenHidden');
-    if (isScreenHidden === 'true') {
-        const screenHiddenTime = parseInt(localStorage.getItem('screenHiddenTime'), 10);
-        const currentTime = Date.now();
-        const elapsedTime = currentTime - screenHiddenTime;
-
-        if (elapsedTime < 40 * 60 * 1000) {
-            // Mantener la pantalla oculta
-            document.getElementById('screen').style.display = 'none';
-            // Establecer un temporizador para mostrar la pantalla después del tiempo restante
-            setTimeout(() => {
-                localStorage.removeItem('isScreenHidden');
-                location.reload();
-            }, 40 * 60 * 1000 - elapsedTime);
-        } else {
-            // Restablecer el estado si ha pasado más de 40 minutos
-            localStorage.removeItem('isScreenHidden');
-        }
-    }
+    
 
     // Asignar funciones a los botones
     document.getElementById('toggleMenu').onclick = openMenu;
@@ -81,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.controlBtn[onclick="back()"]').onclick = back;
     document.querySelector('.menuBtn[onclick="play()"]').onclick = play;
     document.querySelector('.menuBtn[onclick="menutrucos()"]').onclick = menutrucos;
-    document.querySelector('.menuBtn[onclick="tyc()"]').onclick = tyc; // Corregido el nombre de la función aquí
     document.querySelector('.menuBtn[onclick="pushversion()"]').onclick = pushversion;
-    document.getElementById('activate').onclick = ocultarpresentacion;
+    
 });

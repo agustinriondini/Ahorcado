@@ -115,3 +115,6 @@
 #menuwrapper{
     display: none;
 }
+#screen{
+    display: flex;
+}
