@@ -1,0 +1,48 @@
+#body{
+    width: 100dvw;
+    min-width: 300px;
+    max-width: 3000px;
+    height: 100dvh;
+    max-height: auto;
+    background-image: url(../Images/Table/mesa_madera_alternativa.jpg);
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    overflow: auto;
+}
+
+#reload{
+    height: 30%;
+    min-height: 100px;
+    max-height: 200px;
+    aspect-ratio: 1/0.5;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    z-index: 99;
+    border: double 0.2rem white;
+}
+.reload_alert{
+    color: #fff;
+    text-align: center;
+}
+#rebootBtn{
+    height: 50%;
+    min-height: 25px;
+    max-height: 75px;
+    aspect-ratio: 1/1;
+    border: solid 0.1rem white;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+#rebootBtn:hover{
+    background-color: rgba(1, 174, 249, 0.5);
+    animation: rotateAnimation 2s linear infinite;
+}

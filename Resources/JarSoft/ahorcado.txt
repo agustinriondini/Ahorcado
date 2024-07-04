@@ -1,0 +1,3 @@
+El El ahorcado. <br><br>
+Recreacion digital del clasico juego del Ahorcado. Cuenta con 3 (tres) niveles de dificultad y un modo "Manual" que te permite ingresar una palabra para jugar con otra persona y que esta deba adivinarla.<br><br>
+Navega por el menu principal y el menu de ajustes para mas informacion.<br><br>

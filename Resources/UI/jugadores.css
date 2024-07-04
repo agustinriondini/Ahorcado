@@ -1,0 +1,64 @@
+.avatar.turno {
+    animation: parpadeo 1s infinite;
+    border: 5px solid transparent;
+}
+.playerContainer{/*su container esta unicado en gameCenter*/
+    width: 70%;
+    min-width: 140px;
+    max-width: 400px;
+    height: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+}
+.playerData{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 60%;
+}
+.avatar{
+    height: 70%;
+    min-height: 60px;
+    max-height: 80px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: 5px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    
+}
+#avatarPlayer1{
+    background-image: url("../Images/Pics/user.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-color: #fff;
+    display: flex;
+}
+.player{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 20%;
+    color: #fff;
+    text-transform: capitalize;
+    transition: background-color 0.3s ease;
+
+}
+.player:hover{
+    cursor:text;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: black;
+}

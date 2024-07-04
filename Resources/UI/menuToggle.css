@@ -1,0 +1,30 @@
+/*Al presionar boton-menu hamburguesa*/
+.menuToggleContainer{
+    width: 100%;
+    min-width: 300px;
+    max-width: 1000px;
+    height: 5%;
+    min-height: 20px;
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+#menuToggle{
+    display: flex;
+    height: 100%;
+    aspect-ratio: 1/1;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: solid 0.1rem rgba(0, 0, 0, 0);
+    margin: auto 0;
+    z-index: 9999;
+    transition: background-color 0.3s ease;
+}
+#menuToggle:hover{
+    background-color: rgba(1, 174, 249, 0.5);
+    border-color: rgba(1, 174, 249, 0.5);
+    cursor: pointer;
+}
+

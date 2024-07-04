@@ -1,0 +1,15 @@
+Sugerencia<br><br>
+🪧Ingresa tu nombre y completa tu perfil de juego. Puedes seleccionar una imagen, que sera tu avatar. Visita el menu de "Ajustes ⚙️".<br><br>
+
+Como jugar<br><br>
+1- Selecciona una dificultad del menu desplegable en la pantalla principal, pullsa "Aceptar" y luego "Jugar".<br><br>
+*1*- El temporizador se activa automaticamente al presionar "Jugar", tienes 45 segundo para adivinar la palabra.<br><br>
+2- Ingresa una letra en el campo "Ingresar letra" y luego pulsa enter o haz click en "Probar".<br><br>
+3- Si la letra es valida, sera ingresada en el recuadro de color verde, si no lo es, sera ingresada en ell recuadro naranja.<br><br>
+*3*- Si la letra ingresada es erronea, se te restara un intento y en la pantalla se dibujara al ahorcado. Cada error resta un intento. Tienes 4 (cuatro) intentos, al cuarto error pierdes la partida.<br><br>
+*3*- Si ingresas mas de una vez la misma letra, se te abrira una notificacion para avisarte. Esta accion no cuenta como error, por lo que no te resta intentos.<br><br>
+4- Si ya adivinaste la palabra y te queda poco tiempo, puedes ingresar la palabra completa en el campo de "Adivinar palabra".<br><br>
+5- Para jugar nuevamente pulsa "Reiniciar".<br><br>
+
+
+Guardado<br><br>
