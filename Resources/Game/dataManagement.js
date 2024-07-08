@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
         guardarEstadoJuego();
         reiniciarJuego();
     });
-
     function guardarEstadoJuego() {
         // Guardar el contenido de gameDataSection
         var gameDataSectionContent = document.getElementById("gameDataSection").innerHTML;
@@ -66,8 +65,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function reiniciarJuego() {
-        cargarEstadoJuego();
+        guardarEstadoJuego();
         location.reload();
+        cargarEstadoJuego();
     }
 
     cargarEstadoJuego();

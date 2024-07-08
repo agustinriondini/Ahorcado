@@ -14,14 +14,13 @@
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-snap-type: proximity;
-   
 }
 .helpTitle{
     text-align: center;
     display: flex;
     margin: auto;
     justify-content: center;
-    color: rgba(1, 174, 249, 0.5);;
+    color: goldenrod;
     font-size: 1.5rem;
     font-weight: bolder;
 }
@@ -33,7 +32,7 @@
     margin: 0.5rem auto;
 }
 .issueTitle{
-    color: rgba(1, 174, 249, 0.5);;
+    color: goldenrod;
     font-weight: bolder;
     font-size: 1.4rem;
     display: flex;

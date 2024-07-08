@@ -1,7 +1,29 @@
+========================================<br>
+========================================<br>
+===== JARSOFT == El ahorcado == changelog =====<br>
+========================================<br>
+========================================<br><br>
+
+## v3.1.2 build#42(08072024)<br><br>
+
+-[Fix] Corregido la falta de localizacion del archivo dataManagement.js del servidor.<br>
+-[Fix] Corregiga la logica de determinacion de "calificacion del jugador". Ahora es mas precisa.<br>
+-[Fix] Correccion de espaciado y visualizacion del texto correspondiente al changelog.txt<br>
+-[Bugfix] Correccion del funcionamiento del boton reiniciar y el almacenamiento de datos en cache.<br>
+-[Bugfix] Correccion de variables de entorno en ajuste.js<br>
+-[Change] Se inhabilito la seleccion de texto.<br>
+-[Change] Los datos del juego se guardan en cache en al completarse las funciones de ganar, perder, y pulsar el boton de reinicio para prevenir la perdida de informacion.<br>
+-[New] Agregado un acumulador de partidas jugadas.<br>
+-[Delete] Se elimino la entrada de Estadisticas correspondiente al evaluador de dificultad preferida.<br>
+-[Delete] Se eliminaron funciones del area de Estadisticas que no correpondian al juego.<br>
+-[Update] Se actualizo el changelog.txt.<br>
+-[Update] Se actualizo la version del juego.<br><br>
+-[Rollback] Se revirtio el color de los titulos de la seccion de ayuda a los colores de versiones previas.<br>
+-[ALERT] Se envio una funcion de forzado de limpieza de cache para solucionar errores visuales provocados por datos del juego almacenados en cache pertenecientes a versiones anteriores.<br>
 ========================================<br><br>
 -[Merge]3.1.1 stable-build#40 update-03072024
 
--[Upgrade] Se porto el ecosistema del juego "Q-Lo Sucio". "".<br>
+-[Upgrade] Se porto el ecosistema del juego "Q-Lo Sucio".<br>
 ** Menu de configuraciones.<br>
 ** Game Center (Usuario, avatar, puntaje).<br>
 ** Terminos y condiciones del juego, registro de cambios y reglas.<br>
@@ -24,52 +46,52 @@
 -[Restore] Se restauro la version correspondiente del kernell para esta version del juego.<br>
 -[Drop-support] Se finaliza el soporte para la vieja version del juego en /index-old.html<br>
 
-======================================
-## v2.3.7 public_release_v2.3.8_update27052024Build#37
--[New] Nueva pantalla de inicio del juego
--[New] Nuevo menu de ajustes
--[New] Nuevo boton con trucos para activar. Los trucos fuerzan al juego a operar de una manera no nativa, por lo que pueden generarse errores de cache o visualizacion mientras esten activados.
--[Deleted] Se elimino el viejo banner con el boton de donacion
--[Change] Se cambio el link para jugar a la vieja version por un boton
--[UI] Bugfixes.
--[Update] kernel.js actualizado para ser compatible con las nuevas funciones.
--[Update] Actualizado el readme.md y la version
+======================================<br><br>
+## v2.3.7 public_release_v2.3.8_update27052024Build#37<br><br>
+-[New] Nueva pantalla de inicio del juego.<br>
+-[New] Nuevo menu de ajustes.<br>
+-[New] Nuevo boton con trucos para activar. Los trucos fuerzan al juego a operar de una manera no nativa, por lo que pueden generarse errores de cache o visualizacion mientras esten activados.<br>
+-[Deleted] Se elimino el viejo banner con el boton de donacion.<br>
+-[Change] Se cambio el link para jugar a la vieja version por un boton.<br>
+-[UI] Bugfixes.<br>
+-[Update] kernel.js actualizado para ser compatible con las nuevas funciones.<br>
+-[Update] Actualizado el readme.md y la version.<br>
 
-======================================
-## v2.3.7 public_release_v2.3.7_update21042024Build#36
--[New] Temporizador. 45 segundos para ganar la partida.
--[New] Dificultad maxima agregada a traves del selector. La lista contiene elementos en español e ingles. (dificultad+++.js).
--[Update_UI] Agregados pequeños iconos en la interfaz del juego, se agrego el icono junto al titulo y se reemplazo el metodo de contacto.
--[Fixes] Se ajusto la visualizacion de las redes sociales.
--[Fixes] Se reajusto el changelog.txt
--[Update] version.js
-======================================
-## v2.3.6 (Febrero 2024) build35_20022024
--[Update]actualizado el changelog en readme.md.
--[Update]se actualizo y mejoro la visualizacion de los iconos de redes sociales mas un leve efecto al posar el mouse sobre ellos.
--[Delete]se inhabilito la dificultad UNLU(beta).
--[Bugfix]se corrigieron errores de visualizacion en dispositivos moviles.
--[Bugfix]se corrigieron errores de diseño en index.html para el selector de dificultad.
--[Bugfix]se corrigieron errores de diseño en index.html para el banner principal
--[New]se agrego una nueva funcion para determinar y mostrar la version del juego en el footer de manera automatica "version.js".
+======================================<br><br>
+## v2.3.7 public_release_v2.3.7_update21042024Build#36<br><br>
+-[New] Temporizador. 45 segundos para ganar la partida.<br>
+-[New] Dificultad maxima agregada a traves del selector. La lista contiene elementos en español e ingles. (dificultad+++.js).<br>
+-[Update_UI] Agregados pequeños iconos en la interfaz del juego, se agrego el icono junto al titulo y se reemplazo el metodo de contacto.<br>
+-[Fixes] Se ajusto la visualizacion de las redes sociales.<br>
+-[Fixes] Se reajusto el changelog.txt<br>
+-[Update] version.js<br>
+======================================<br><br>
+## v2.3.6 (Febrero 2024) build35_20022024<br><br>
+-[Update]actualizado el changelog en readme.md.<br>
+-[Update]se actualizo y mejoro la visualizacion de los iconos de redes sociales mas un leve efecto al posar el mouse sobre ellos.<br>
+-[Delete]se inhabilito la dificultad UNLU(beta).<br>
+-[Bugfix]se corrigieron errores de visualizacion en dispositivos moviles.<br>
+-[Bugfix]se corrigieron errores de diseño en index.html para el selector de dificultad.<br>
+-[Bugfix]se corrigieron errores de diseño en index.html para el banner principal.<br>
+-[New]se agrego una nueva funcion para determinar y mostrar la version del juego en el footer de manera automatica "version.js".<br>
 
-======================================
-## v2.3 (Diciembre 2023)
--[Bugfixes]correccion de errores menores.
--[New]nuevas funciones del juego. Selector de dificultad.
--[New]UI2023.css renovado por completo.
--[New]se permite jugar a la vieja version "/index-old.html".
--[New]se agrego un panel en el inicio de la pagina.
--[Update]se cambiaron los inconos de las redes sociales.
-======================================
-## v2.2 (Noviembre de 2022)
--[Bugfixes]Correccion de errores en general.
--[Bugfixes]Correccion de la estructura HTML.
--[Update_UI]Rediseño de la interfaz. UI.css.
--[Deleted]los inconos de redes sociales de esta version ya no estan disponibles.
-======================================
-##  v1.0 (Mayo 2022)
--[Initial_release]Version de lanzamiento.
+======================================<br><br>
+## v2.3 (Diciembre 2023)<br><br>
+-[Bugfixes]correccion de errores menores.<br>
+-[New]nuevas funciones del juego. Selector de dificultad.<br>
+-[New]UI2023.css renovado por completo.<br>
+-[New]se permite jugar a la vieja version "/index-old.html".<br>
+-[New]se agrego un panel en el inicio de la pagina.<br>
+-[Update]se cambiaron los inconos de las redes sociales.<br>
+======================================<br><br>
+## v2.2 (Noviembre de 2022)<br><br>
+-[Bugfixes]Correccion de errores en general.<br>
+-[Bugfixes]Correccion de la estructura HTML.<br>
+-[Update_UI]Rediseño de la interfaz. UI.css.<br>
+-[Deleted]los inconos de redes sociales de esta version ya no estan disponibles.<br>
+======================================<br><br>
+##  v1.0 (Mayo 2022)<br><br>
+-[Initial_release]Version de lanzamiento.<br>
 
 
 

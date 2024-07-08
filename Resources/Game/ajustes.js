@@ -81,11 +81,11 @@ function tyc() {
     document.getElementById("ajustes").style.display = "none";
     document.getElementById("menuToggle").style.display = "flex";
 }
-//Boton Mi puntaje
-function estadisticas(){
+//area de estadisticas se encuentra en el archivo estadisticas.js
+function mostrarEstadisticas(){
     document.getElementById("estadisticas").style.display = "flex";
     document.getElementById("ajustes").style.display = "none";
-
+    estadisticasLocales();
 }
 //funcion de cierre especifica del area de estadisticas
 function closeAll(){

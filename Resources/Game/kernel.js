@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var tiempoRestante = 45;
     var temporizadorInterval;
     var erroresMaximos = 4;
+    var totalPartidas = localStorage.getItem('totalPartidas') ? parseInt(localStorage.getItem('totalPartidas')) : 0;
+    
 
     function inicializar() {
         errores = 0;
@@ -165,6 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
         puntosSpan.textContent = puntosActuales + 1;
     }
 
+
     function gane() {
         detenerTemporizador();
         $('#probar_letra').attr('disabled', true);
@@ -176,6 +179,8 @@ document.addEventListener('DOMContentLoaded', function() {
         mostrarPalabra('gane');
         sumarPuntos();
         guardarEstadoJuego();
+        totalPartidas += 1;
+        localStorage.setItem('totalPartidas', totalPartidas);
     }
 
     function perdida() {
@@ -188,6 +193,8 @@ document.addEventListener('DOMContentLoaded', function() {
         $('#imagen_ahorcado').attr('src', imagenPath);
         mostrarPalabra('perdida');
         guardarEstadoJuego();
+        totalPartidas +=1;
+        localStorage.setItem('totalPartidas', totalPartidas);
     }
 
     function iniciar() {

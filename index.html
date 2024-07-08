@@ -20,8 +20,8 @@
     <script src="./Resources/Game/version.js"></script>
     <script src="./Resources/Game/estadisticas.js"></script>
     <script src="./Resources/Game/selector.js"></script>
-    <script src="/Resources/Game/dataManagement.js"></script>
-
+    <script src="./Resources/Game/dataManagement.js"></script>
+    <!--CSS-UI-->
     <link rel="stylesheet" href="./Resources/UI/reset.css">
     <link rel="stylesheet" href="./Resources/UI/menuToggle.css">
     <link rel="stylesheet" href="./Resources/UI/menuContainer.css">
@@ -55,10 +55,10 @@
     <div id="gameDataSection">
         <div class="gameDataContainer">
             <div class="playerContainer">
-                <div id="avatarPlayer1" class="avatar" onclick="mostrarAvatars()"></div>
+                <span id="avatarPlayer1" class="avatar" onclick="mostrarAvatars()"></span>
                 <div class="playerData">
-                    <tag id="player1"class="player" onclick="editarNombreJugador()">Ingresa tu nombre</tag>
-                    <tag id="playerPoints" class="points">0</tag><h4 class="pointsStyle">Victorias🏆</h4>
+                    <span id="player1"class="player" onclick="editarNombreJugador()">Ingresa tu nombre</span>
+                    <span id="playerPoints" class="points">0</span><h4 class="pointsStyle">Victorias🏆</h4>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
         <div id="ajustes" class="menuContainer" style="display: none">
             <button class="closeBtn" id="backBtn"  onclick="backToMainMenu()">← Volver</button>
             <div class="btnContainer">
-                <button class="menuBtn" id="estadisticasLocales" onclick="estadisticas()" disabled style="cursor:  not-allowed;">Mi puntaje 💻</button>
+                <button class="menuBtn" id="estadisticasLocales" onclick="mostrarEstadisticas()">Mi puntaje 💻</button>
                 <button class="menuBtn" onclick="editarNombreJugador()">Editar nombre jugador ⌨️</button>
                 <button class="menuBtn" id="mostrarAvatarsButton" onclick="mostrarAvatars()">Cambiar avatar 🙋</button>
                 <button class="menuBtn" id="mostrarMesasButton" onclick="mostrarMesas()">Cambiar mesa 🏓</button>
@@ -112,10 +112,6 @@
                         <span class="metricas-value" id="perVictorias">Aun en revision</span>
                     </div>
                     <div class="indice-metrico">
-                        <h5 class="title-metricas">Dificultad preferida:</h5>
-                        <span class="metricas-value" id="letalidad">Aun en revision</span>
-                    </div>
-                    <div class="indice-metrico">
                         <h5 class="title-metricas">Partidas jugadas:</h5>
                         <span class="metricas-value" id="totalRondas">0</span>
                     </div>
@@ -137,9 +133,9 @@
         <div id="cheats" class="menuContainer" style="display: none;">
             <button class="closeBtn" id="backToSettings"  onclick="backToSettings()">← Volver</button>
             <div id="cheatsContainer" class="submenuContainer">
-                <div class="trickContainer"><label for="temporizador" class="trickDetail">Remover temporizador ⌛</label><input type="checkbox" name="" id="tempo" class="ckbox"></div>
-                <div class="trickContainer"><label for="errores" class="trickDetail">Extender intentos 🎯</label><input type="checkbox" name="" id="incrementarIntentos" class="ckbox"></div>
-                <div class="trickContainer"><label for="revelacion" class="trickDetail">Revelar palabra 💫</label><input type="checkbox" name="" id="revelarpalabra" class="ckbox"></div>
+                <div class="trickContainer"><label for="temporizador" class="trickDetail" >Remover temporizador ⌛</label><input type="checkbox" name="temporizador" id="tempo" class="ckbox"></div>
+                <div class="trickContainer"><label for="errores" class="trickDetail">Extender intentos 🎯</label><input type="checkbox" name="errores" id="incrementarIntentos" class="ckbox"></div>
+                <div class="trickContainer"><label for="revelacion" class="trickDetail">Revelar palabra 💫</label><input type="checkbox" name="revelacion" id="revelarpalabra" class="ckbox"></div>
             </div>
         </div>
         <div id="mesasBox" class="menuContainer" style="display : none">
