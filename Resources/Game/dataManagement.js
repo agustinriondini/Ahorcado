@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     var rebootButton = document.getElementById("play");
     var rebootBtn = document.getElementById("boton_finalizar");
-    var player1Input = document.getElementById("player1");
-    var avatarPlayer1Input = document.getElementById("avatarPlayer1");
-    var playerPointsSpan = document.getElementById("playerPoints");
-    var bodyBackground = document.body.style.backgroundImage;
+    var ahorcadoPlayer1Input = document.getElementById("ahorcadoPlayer1");
+    var avatarahorcadoPlayer1Input = document.getElementById("avatarahorcadoPlayer1");
+    var ahorcadoPlayerPointsSpan = document.getElementById("ahorcadoPlayerPoints");
+    var ahorcadoBodyBackground = document.body.style.backgroundImage;
     
     
     rebootButton.addEventListener("click", function() {
@@ -17,50 +17,50 @@ document.addEventListener('DOMContentLoaded', function() {
         reiniciarJuego();
     });
     function guardarEstadoJuego() {
-        // Guardar el contenido de gameDataSection
-        var gameDataSectionContent = document.getElementById("gameDataSection").innerHTML;
-        localStorage.setItem('gameDataSectionContent', gameDataSectionContent);
+        // Guardar el contenido de ahorcadoDataSection
+        var ahorcadoDataSectionContent = document.getElementById("ahorcadoDataSection").innerHTML;
+        localStorage.setItem('ahorcadoDataSectionContent', ahorcadoDataSectionContent);
         
         // Guardar mesa elegida
-        var bodyBackgroundImage = getComputedStyle(document.body).backgroundImage;
-        localStorage.setItem('bodyBackgroundImage', bodyBackgroundImage);
+        var ahorcadoBodyBackgroundImage = getComputedStyle(document.body).backgroundImage;
+        localStorage.setItem('ahorcadoBodyBackgroundImage', ahorcadoBodyBackgroundImage);
 
         // Guardar datos del jugador
-        var player1 = player1Input.value;
-        var avatarPlayer1 = avatarPlayer1Input.src;
-        var playerPoints = playerPointsSpan.textContent;
+        var ahorcadoPlayer1 = ahorcadoPlayer1Input.value;
+        var avatarahorcadoPlayer1 = avatarahorcadoPlayer1Input.src;
+        var ahorcadoPlayerPoints = ahorcadoPlayerPointsSpan.textContent;
 
-        localStorage.setItem('player1', player1);
-        localStorage.setItem('avatarPlayer1', avatarPlayer1);
-        localStorage.setItem('playerPoints', playerPoints);
+        localStorage.setItem('ahorcadoPlayer1', ahorcadoPlayer1);
+        localStorage.setItem('avatarahorcadoPlayer1', avatarahorcadoPlayer1);
+        localStorage.setItem('ahorcadoPlayerPoints', ahorcadoPlayerPoints);
     }
 
     function cargarEstadoJuego() {
-        // Cargar el contenido de gameDataSection
-        var savedGameDataSectionContent = localStorage.getItem('gameDataSectionContent');
-        if (savedGameDataSectionContent) {
-            document.getElementById("gameDataSection").innerHTML = savedGameDataSectionContent;
+        // Cargar el contenido de ahorcadoDataSection
+        var savedahorcadoDataSectionContent = localStorage.getItem('ahorcadoDataSectionContent');
+        if (savedahorcadoDataSectionContent) {
+            document.getElementById("ahorcadoDataSection").innerHTML = savedahorcadoDataSectionContent;
         }
 
         // Cargar la mesa elegida
-        var savedBodyBackgroundImage = localStorage.getItem('bodyBackgroundImage');
-        if (savedBodyBackgroundImage) {
-            document.body.style.backgroundImage = savedBodyBackgroundImage;
+        var savedahorcadoBodyBackgroundImage = localStorage.getItem('ahorcadoBodyBackgroundImage');
+        if (savedahorcadoBodyBackgroundImage) {
+            document.body.style.backgroundImage = savedahorcadoBodyBackgroundImage;
         }
 
         // Cargar datos del jugador
-        var savedplayer1 = localStorage.getItem('player1');
-        var savedavatarPlayer1 = localStorage.getItem('avatarPlayer1');
-        var savedPlayerPoints = localStorage.getItem('playerPoints');
+        var savedahorcadoPlayer1 = localStorage.getItem('ahorcadoPlayer1');
+        var savedavatarahorcadoPlayer1 = localStorage.getItem('avatarahorcadoPlayer1');
+        var savedahorcadoPlayerPoints = localStorage.getItem('ahorcadoPlayerPoints');
 
-        if (savedplayer1) {
-            player1Input.value = savedplayer1;
+        if (savedahorcadoPlayer1) {
+            ahorcadoPlayer1Input.value = savedahorcadoPlayer1;
         }
-        if (savedavatarPlayer1) {
-            avatarPlayer1Input.src = savedavatarPlayer1;
+        if (savedavatarahorcadoPlayer1) {
+            avatarahorcadoPlayer1Input.src = savedavatarahorcadoPlayer1;
         }
-        if (savedPlayerPoints) {
-            playerPointsSpan.textContent = savedPlayerPoints;
+        if (savedahorcadoPlayerPoints) {
+            ahorcadoPlayerPointsSpan.textContent = savedahorcadoPlayerPoints;
         }
     }
 

@@ -38,7 +38,7 @@ function borrarPuntaje() {
 function editarNombreJugador() {
     var nuevoNombre = prompt("Ingrese un nombre");
     if (nuevoNombre !== null && nuevoNombre.trim() !== "") {
-        document.getElementById("player1").textContent = nuevoNombre;
+        document.getElementById("ahorcadoPlayer1").textContent = nuevoNombre;
     } else {
         alert("El nombre no puede estar vacio!!!");
         //forzar nombre, no permitir campo vacio
@@ -54,7 +54,7 @@ function mostrarAvatars() {
 
 function pushAvatar(element) {
     var avatarURL = element.src;
-    document.getElementById("avatarPlayer1").style.backgroundImage = "url('" + avatarURL + "')";
+    document.getElementById("avatarahorcadoPlayer1").style.backgroundImage = "url('" + avatarURL + "')";
 
 }
 //Cambio de mesa

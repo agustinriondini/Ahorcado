@@ -1,47 +1,47 @@
 function estadisticasLocales() {
-    var nombreJugador = document.getElementById("player1").textContent;
-    var puntosJugador = parseFloat(document.getElementById("playerPoints").textContent);
-    var totalPartidas = localStorage.getItem('totalPartidas') ? parseInt(localStorage.getItem('totalPartidas')) : 0;
+    var nombreJugador = document.getElementById("ahorcadoPlayer1").textContent;
+    var puntosJugador = parseFloat(document.getElementById("ahorcadoPlayerPoints").textContent);
+    var acumuladorPartidasJugadas = localStorage.getItem('acumuladorPartidasJugadas') ? parseInt(localStorage.getItem('acumuladorPartidasJugadas')) : 0;
     //Porcentaje de victorias
 
     var porcentajeVictorias;
-    if (totalPartidas < 1){
+    if (acumuladorPartidasJugadas < 1){
         porcentajeVictorias = 0;
     }else{
-        porcentajeVictorias = (puntosJugador * 100) / totalPartidas;
+        porcentajeVictorias = (puntosJugador * 100) / acumuladorPartidasJugadas;
     }
     // Calcular nivel de suciedad
-    var nivelJugador;
-    if (totalPartidas < 5){
-        nivelJugador = "Aun en revision";
+    var ahorcadoNivelJugador;
+    if (acumuladorPartidasJugadas < 5){
+        ahorcadoNivelJugador = "Aun en revision";
     }else if (porcentajeVictorias >= 90){
-        nivelJugador = "Genio 🧠";
+        ahorcadoNivelJugador = "Genio 🧠";
     }else if (porcentajeVictorias < 90 && porcentajeVictorias > 80){
-        nivelJugador = "Erudito 🥇";
+        ahorcadoNivelJugador = "Erudito 🥇";
     }else if (porcentajeVictorias <= 80 && porcentajeVictorias > 50){
-        nivelJugador = "Buen conocimiento 🥈";
+        ahorcadoNivelJugador = "Buen conocimiento 🥈";
     }else if (porcentajeVictorias <= 50 && porcentajeVictorias > 30){
-        nivelJugador = "Practicante 🥉";
+        ahorcadoNivelJugador = "Practicante 🥉";
     }else if(porcentajeVictorias <= 30 && porcentajeVictorias > 20){
-        nivelJugador = "Amateur 👩🏻‍🎓";
+        ahorcadoNivelJugador = "Amateur 👩🏻‍🎓";
     }else if (porcentajeVictorias <= 20 && porcentajeVictorias > 10){
-        nivelJugador = "Oxidado 🛠️";
+        ahorcadoNivelJugador = "Oxidado 🛠️";
     }else{
-        nivelJugador = "Sugerencia. Limpiar cache 😿";
+        ahorcadoNivelJugador = "Sugerencia. Limpiar cache 😿";
     }
-    var avatarStyle = window.getComputedStyle(document.getElementById("avatarPlayer1")).backgroundImage;
-    document.getElementById("avatarPlayer1Estadisticas").style.backgroundImage = avatarStyle;
-    document.getElementById("avatarPlayer1Estadisticas").style.backgroundSize = "cover";
-    document.getElementById("avatarPlayer1Estadisticas").style.backgroundPosition = "center";
-    document.getElementById("player1Estadisticas").textContent = nombreJugador;
-    document.getElementById("playerPointsEstadisticas").textContent = puntosJugador + "🏆";
+    var avatarStyle = window.getComputedStyle(document.getElementById("avatarahorcadoPlayer1")).backgroundImage;
+    document.getElementById("avatarahorcadoPlayer1Estadisticas").style.backgroundImage = avatarStyle;
+    document.getElementById("avatarahorcadoPlayer1Estadisticas").style.backgroundSize = "cover";
+    document.getElementById("avatarahorcadoPlayer1Estadisticas").style.backgroundPosition = "center";
+    document.getElementById("ahorcadoPlayer1Estadisticas").textContent = nombreJugador;
+    document.getElementById("ahorcadoPlayerPointsEstadisticas").textContent = puntosJugador + "🏆";
 
     //push nivel suciedad
-    document.getElementById("nivelJugador").textContent = nivelJugador;
+    document.getElementById("ahorcadoNivelJugador").textContent = ahorcadoNivelJugador;
     //push % de victorias
-    document.getElementById("perVictorias").textContent = porcentajeVictorias.toFixed(2) + "%";
+    document.getElementById("ahorcadoPerVictorias").textContent = porcentajeVictorias.toFixed(2) + "%";
     //push rondas jugadas
-    document.getElementById("totalRondas").textContent = totalPartidas + "🎯";
+    document.getElementById("ahorcadoTotalRondas").textContent = acumuladorPartidasJugadas + "🎯";
     
 
 }   

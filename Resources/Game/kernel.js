@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var tiempoRestante = 45;
     var temporizadorInterval;
     var erroresMaximos = 4;
-    var totalPartidas = localStorage.getItem('totalPartidas') ? parseInt(localStorage.getItem('totalPartidas')) : 0;
+    var acumuladorPartidasJugadas = localStorage.getItem('acumuladorPartidasJugadas') ? parseInt(localStorage.getItem('acumuladorPartidasJugadas')) : 0;
     
 
     function inicializar() {
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function sumarPuntos() {
-        var puntosSpan = document.getElementById("playerPoints");
+        var puntosSpan = document.getElementById("ahorcadoPlayerPoints");
         var puntosActuales = parseInt(puntosSpan.textContent) || 0;
         puntosSpan.textContent = puntosActuales + 1;
     }
@@ -179,8 +179,8 @@ document.addEventListener('DOMContentLoaded', function() {
         mostrarPalabra('gane');
         sumarPuntos();
         guardarEstadoJuego();
-        totalPartidas += 1;
-        localStorage.setItem('totalPartidas', totalPartidas);
+        acumuladorPartidasJugadas += 1;
+        localStorage.setItem('acumuladorPartidasJugadas', acumuladorPartidasJugadas);
     }
 
     function perdida() {
@@ -193,8 +193,8 @@ document.addEventListener('DOMContentLoaded', function() {
         $('#imagen_ahorcado').attr('src', imagenPath);
         mostrarPalabra('perdida');
         guardarEstadoJuego();
-        totalPartidas +=1;
-        localStorage.setItem('totalPartidas', totalPartidas);
+        acumuladorPartidasJugadas +=1;
+        localStorage.setItem('acumuladorPartidasJugadas', acumuladorPartidasJugadas);
     }
 
     function iniciar() {

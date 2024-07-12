@@ -4,6 +4,17 @@
 ========================================<br>
 ========================================<br><br>
 
+-## v3.1.3 build#43(11072024)<br><br>
+
+HOTFIX -(parche de correccion de manipulacion de datos del juego ya que generaban un error si se jugaba el "Qlo-Sucio" y "El Ahorcado" en el mismo navegador)<br><br>
+-[Bugfix] Solucionado error de recuperacion de datos del juego.<br>
+-[Update] Actualizadas y corregida la informacion sobre el juego y de la seccion ayuda.<br>
+-[Update] Se mejoro la visualizacion del alerta de error del juego.<br>
+-[Update] Se actualizo la version del juego<br>
+
+
+========================================<br><br>
+
 ## v3.1.2 build#42(08072024)<br><br>
 
 -[Fix] Corregido la falta de localizacion del archivo dataManagement.js del servidor.<br>
